@@ -9,3 +9,5 @@ navbar:
       href: about.html
     - text: "Example Work"
       href: example_work.html
+    - text: "CV"
+      href: paschall_cv11.19.21.pdf
