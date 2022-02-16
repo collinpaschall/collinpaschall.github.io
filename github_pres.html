@@ -9,14 +9,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Collin Paschall" />
 
 
-<title>About This Website</title>
+<title>Making a GitHub Pages Site</title>
 
 <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -32,6 +33,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -57,6 +60,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 
 
@@ -237,7 +241,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Collin Paschall</a>
+      <a class="navbar-brand" href="index.html"><img id="logo" style="width: 30px;" src="collin_headshot.jpg" /></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -245,11 +249,31 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="about.html">About</a>
+  <a href="paschall_cv11.19.21.pdf">CV</a>
+</li>
+<li>
+  <a href="nationscape.html">Example Work</a>
+</li>
+<li>
+  <a href="test_dash.html">Test Dashboard</a>
+</li>
+<li>
+  <a href="github_pres.html">Build this Website</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://www.linkedin.com/in/collin-paschall-16137510">
+    <span class="fa fa-linkedin"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/CollinPaschall">
+    <span class="fa fa-twitter"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -259,12 +283,90 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About This Website</h1>
+<h1 class="title toc-ignore">Making a GitHub Pages Site</h1>
+<h3 class="subtitle">(use arrows or click outside to navigate)</h3>
+<h4 class="author">Collin Paschall</h4>
+<h4 class="date">2/4/2022</h4>
 
 </div>
 
 
-<p>More about this website.</p>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>All the material in this presentation is pulled from there sources:</p>
+<p><a href="https://pages.github.com">GitHub Pages</a> getting started guide</p>
+<p><a href="https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html">Emily Zabor’s</a> Creating websites in R</p>
+<p><a href="https://rstudio4edu.github.io/rstudio4edu-book/">De Leon and Hill’s</a> rstudio4edu</p>
+<p><a href="https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html">RStudio and Garrett Grolemund</a> R Markdown Websites.</p>
+<p>These references are much more in-depth and will teach you many additional tricks.</p>
+</div>
+<div id="before-you-start" class="section level2">
+<h2>Before you start</h2>
+<p>Must do:</p>
+<ul>
+<li>Install R and RStudio</li>
+<li>Sign up for a GitHub account</li>
+<li>Install and set up <a href="https://desktop.github.com">GitHub Desktop</a></li>
+</ul>
+<p>Good to do:</p>
+<ul>
+<li>Review <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown Cheat Sheet</a></li>
+</ul>
+</div>
+<div id="set-up-github" class="section level2">
+<h2>Set Up GitHub</h2>
+<ul>
+<li>Follow the <a href="https://pages.github.com">pages</a> directions</li>
+<li>Create a repository in the browser called <strong>username</strong>.github.io</li>
+<li>Close the repository using the “Set up in Desktop” button</li>
+</ul>
+</div>
+<div id="r-studio" class="section level2">
+<h2>R Studio</h2>
+<ul>
+<li>Create a new project</li>
+<li>Create in a new folder, wherever you want</li>
+<li>Create a “Simple R Markdown Website”</li>
+<li>Save and close</li>
+<li>Move the files to your local GitHub folder</li>
+</ul>
+</div>
+<div id="important" class="section level2">
+<h2>IMPORTANT</h2>
+<p>In the .yml file, insert:</p>
+<p>name: “collin.paschall” <strong>output_dir: “.”</strong></p>
+</div>
+<div id="edit-your-pages" class="section level2">
+<h2>Edit your pages</h2>
+<ul>
+<li>index.rmd: your homepage</li>
+<li>_site.yml: the structure of the website</li>
+<li>whatever other files you want</li>
+</ul>
+<p>This is just an R Markdown file. Pretty much anything you can do in an R Markdown, you can do here (though no Shiny embedding).</p>
+<p>Don’t know markdown? <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown Cheat Sheet</a></p>
+</div>
+<div id="knit-and-publish" class="section level2">
+<h2>Knit and publish</h2>
+<ul>
+<li>When you are done editing your R Markdown files, in the terminal type:</li>
+</ul>
+<p>rmarkdown::render_site()</p>
+<ul>
+<li>Then, check and see if they worked locally</li>
+<li>Commit and push through GitHub desktop</li>
+</ul>
+</div>
+<div id="profit" class="section level2">
+<h2>Profit!</h2>
+<p>You now know one of the nerd secret handshakes.</p>
+<ul>
+<li>Add a new page - just make a new .rmd, then and add the .html to the .yml</li>
+<li>Add slick icons</li>
+<li>Add a TOC to a page</li>
+<li>Embed R or Python code chunks and output</li>
+</ul>
+</div>
 
 
 

@@ -1,0 +1,13 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Contact
+
+cpaschall[at]jhu.edu
+
+You can reach me places.

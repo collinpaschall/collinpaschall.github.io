@@ -1,13 +1,25 @@
-name: "my-website"
+name: "collin.paschall"
 output_dir: "."
+output:
+  html_document:
+    css: style.css
+    theme: simplex
+    
 navbar:
-  title: "My Website"
+  title: "<img id=\"logo\" style=\"width: 30px;\" src=\"collin_headshot.jpg\" />"
   left:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
-    - text: "Example Work"
-      href: example_work.html
     - text: "CV"
       href: paschall_cv11.19.21.pdf
+    - text: "Example Work"
+      href: nationscape.html
+    - text: "Test Dashboard"
+      href: test_dash.html
+    - text: "Build this Website"
+      href: github_pres.html
+  right:
+    - icon: fa-linkedin
+      href: https://www.linkedin.com/in/collin-paschall-16137510
+    - icon: fa-twitter
+      href: "https://twitter.com/CollinPaschall"

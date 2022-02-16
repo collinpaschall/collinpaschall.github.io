@@ -1,0 +1,8 @@
+---
+title: "Research"
+output: html_document
+---
+
+I have a diverse research agenda covering American political institutions and behavior. My dissertation research in graduate school focused on the legislative strategies of members of Congress, and I have also written on Congressional scandal. With Benjamin Kantack of Lycoming College, I am engaged in on-going projects related to mass attitudes in contentious policy domains like gun control, climate change, and structural racism. 
+
+I also have an interest in the politics of expertise and how expertise influences policy making. In my forthcoming book (with Ben Ginsberg), **Speaking Truth to Power: Expertise, Politics and Governance, we examine how experts, or truth-tellers, succeed - or fail - to inform decision-makers and resolve conflicts in American public life. Ultimately, we show that while experts are indeed important in crafting solutions to problems, "truth" can also be a servant to the powerful and is not a substitute for broader democratic processes. The book is complete and will be available in fall 2022 from Edward Elgar Publishing. 

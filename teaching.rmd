@@ -1,0 +1,22 @@
+---
+title: "Teaching"
+---
+
+## Overview
+
+I split my teaching duties between two programs in the Center for Advanced Governmental Studies at Johns Hopkins University: the **[M.A. in Government](https://advanced.jhu.edu/academics/graduate/ma-government/)** and the **[M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/)**. I typically teach 5 courses a year, in the spring, summer, and fall semesters. I have personally developed all the courses I currently teach.
+
+## Research and Thesis I
+
+Research and Thesis I is the first course in the M.A. in Government thesis sequence. Our M.A. in Government program culminates in a portfolio thesis of three chapters (papers) that are substantively and thematically related. In the course, I provide an overview of social scientific inquiry. You can review a recent syllabus **[here](http://collinpaschall.github.io/paschall_rt1.pdf)**.
+
+## Data Visualization
+
+Data Visualization is a core course in the M.S. in Data Analytics and Policy program. The course covers creating static and interactive visualization in Tableau and R. The R portion of the course is based on ggplot and the tidyverse. It also include an introduction to dashboard development and R Shiny applications. You can review a recent syllabus **[here](https://collinpaschall.github.io/paschall_data_viz.pdf)**
+
+Parts of this course have been adapted into a **[Coursera specialization](https://www.coursera.org/specializations/jhu-data-visualization-dashboarding-with-r)** that I continue to manage. The Coursera offering has more than 10,000 enrollments. 
+
+## Unleashing Open Data with Python
+
+Unleashing Open Data with Python is an introduction to data analysis in Python. It is designed for intermediate R users who want to be able to analyze rectangular data sets in Python. The course also includes an introduction to accessing data through APIs and a very brief overview of web scraping. For the final project, students write a short research note and post replication code on GitHub. You can review a recent syllabus **[here]() 
+ 

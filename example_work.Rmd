@@ -1,30 +1,27 @@
 ---
-title: "Test Work"
-author: "Collin Paschall"
-date: "2/15/2022"
+title: "Example Work"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+# UNDER CONSTRUCTION
+
+One of the reason I really enjoy teaching quantitative methods is because of the incredible work that our masters students can produce with just a few courses.
+
+```{r}
+library(tidyverse)
+tibble(mtcars)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+ggplot(mtcars,aes(x=mpg,y=cyl))+geom_point()
 ```
 
-## Including Plots
+```{python}
+import pandas as pd
 
-You can also embed plots, for example:
+thing=["a","b","c","d","d"]
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+thing_frame=pd.DataFrame(thing)
+thing_frame.value_counts()
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
