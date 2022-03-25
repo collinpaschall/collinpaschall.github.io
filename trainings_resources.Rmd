@@ -1,0 +1,27 @@
+---
+title: "Trainings and Resources"
+output: 
+  html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library("vembedr")
+```
+
+Periodically I will post useful resources and trainings that I either locate or make myself.
+
+### Making a Website Using Github
+
+February 2022
+
+[Presentation Slides](https://collinpaschall.github.io/github_pres.html).
+
+Workshop Recording:
+
+
+```{r,echo=FALSE}
+embed_youtube("MoiAuoGb-b4")
+```

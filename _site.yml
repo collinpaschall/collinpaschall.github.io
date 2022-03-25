@@ -14,10 +14,8 @@ navbar:
       href: paschall_cv11.19.21.pdf
     - text: "Example Work"
       href: nationscape.html
-    - text: "Test Dashboard"
-      href: test_dash.html
-    - text: "Build this Website"
-      href: github_pres.html
+    - text: "Trainings and Resources"
+      href: trainings_resources.html
   right:
     - icon: fa-linkedin
       href: https://www.linkedin.com/in/collin-paschall-16137510
