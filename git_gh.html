@@ -118,10 +118,16 @@ slide:not(.current) .plotly.html-widget{
 <li>Why? Git/GH are very popular with tech folks.</li>
 </ul>
 
+</article></slide><slide class=""><hgroup><h2>Recognition</h2></hgroup><article  id="recognition">
+
+<ul>
+<li>This presentation draws very heavily on Karl Broman’s Git tutorial - <a href='kbroman.org/github_tutorial' title=''>kbroman.org/github_tutorial</a>.</li>
+</ul>
+
 </article></slide><slide class=""><hgroup><h2>How Does Git work?</h2></hgroup><article  id="how-does-git-work">
 
 <ul>
-<li>Informally, Git adds some &ldquo;hidden files&rdquo; in a directory /folder on your computer.</li>
+<li>Loosely, Git adds some &ldquo;hidden files&rdquo; in a directory /folder on your computer.</li>
 <li>These files help track changes to files in the folder.</li>
 <li>This folder is called a &ldquo;repository.&rdquo;</li>
 </ul>
@@ -162,8 +168,12 @@ slide:not(.current) .plotly.html-widget{
 <ul>
 <li>We can move faster if you set up SSH (secure shell) login for Git.</li>
 <li>Open your Terminal or Git Bash</li>
-<li>ssh-keygen -t rsa -C &ldquo;<a href='mailto:your_email@example.com' title=''>your_email@example.com</a>&rdquo;</li>
-<li>Go to your user folder Cmd+shift+. for Mac or &ldquo;View Hidden Files&rdquo; on Windows</li>
+<li>ssh-keygen -t rsa -C &ldquo;<a href='mailto:your_email@example.com' title=''>your_email@example.com</a>&rdquo;
+
+<ul>
+<li>No need for passphrase, just &ldquo;yes&rdquo; at next</li>
+</ul></li>
+<li>Go to your user folder. Cmd+shift+. for Mac or &ldquo;View Hidden Files&rdquo; on Windows</li>
 <li>Copy that key.</li>
 <li>Go and add that to GitHub account settings (follow along)</li>
 </ul>
@@ -194,7 +204,7 @@ slide:not(.current) .plotly.html-widget{
 <li>Go to github.</li>
 <li>Log in to your account.</li>
 <li>Click the new repository button in the top-right.</li>
-<li>Click the &ldquo;Create repository&rdquo; button.</li>
+<li>Click the &ldquo;New repository&rdquo; button.</li>
 <li>Set your remote connection
 
 <ul>
@@ -224,8 +234,12 @@ slide:not(.current) .plotly.html-widget{
 <li>git clone <a href='mailto:git@github.com' title=''>git@github.com</a>:[your username]/[the repo name]</li>
 </ul></li>
 <li><p>Go into that local folder</p></li>
-<li><p>Add a connection to the <em>original</em> respository -git remote add collinpaschall <a href='https://github.com/collinpaschall/teaching_repo2' title=''>https://github.com/collinpaschall/teaching_repo2</a></p></li>
-<li><p>Check that the remote is set up - git remote -v</p></li>
+<li><p>Add a connection to the <em>original</em> respository -git remote add collinpaschall <a href='https://github.com/collinpaschall/teaching_repo' title=''>https://github.com/collinpaschall/teaching_repo</a></p></li>
+<li><p>Check that the remote is set up</p>
+
+<ul>
+<li>git remote -v</li>
+</ul></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Collaborate Pt 2</h2></hgroup><article  id="collaborate-pt-2">
