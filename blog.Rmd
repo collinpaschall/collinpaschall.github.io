@@ -15,7 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [RSS Feed](https://collinpaschall.github.io/rss.xml)
 
-## Post Post
+## A test post
+
+This is a trial post.
 
 ```{r notes, echo=FALSE,include=FALSE}
 #### anchors added with this:
