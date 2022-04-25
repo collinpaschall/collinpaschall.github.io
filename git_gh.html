@@ -136,15 +136,15 @@ slide:not(.current) .plotly.html-widget{
 
 <ul>
 <li>Git is command line software. GitHub is a GUI wrapper for Git.</li>
-<li>If you now Git, GitHub will be a piece of cake.</li>
+<li>If you know Git, GitHub will be a piece of cake.</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Git Commands</h2></hgroup><article  id="git-commands">
 
 <ul>
 <li>There are lots of ways to use Git commands. We are only doing the basics.</li>
-<li>git init: create a repository in an existing folder.</li>
-<li>git add: tell git you are done working with a file and the file is ready to &ldquo;commit&rdquo; to your repository.</li>
+<li>git init: create a repository using an existing folder.</li>
+<li>git add: tell git you are done working with a file and the file is ready to &ldquo;commit&rdquo; to your repository. This is staging the file.</li>
 <li>git commit: make the modifications to the repository and keep track of them.</li>
 <li>git push: put your new files on GitHub</li>
 </ul>
@@ -153,7 +153,7 @@ slide:not(.current) .plotly.html-widget{
 
 <ul>
 <li>Set up Git on your computer</li>
-<li>Create a repository</li>
+<li>Create a repository and connect it to GitHub</li>
 <li>Fork and suggest changes to a repository</li>
 </ul>
 
@@ -168,14 +168,15 @@ slide:not(.current) .plotly.html-widget{
 <ul>
 <li>We can move faster if you set up SSH (secure shell) login for Git.</li>
 <li>Open your Terminal or Git Bash</li>
-<li>ssh-keygen -t rsa -C &ldquo;<a href='mailto:your_email@example.com' title=''>your_email@example.com</a>&rdquo;
+<li>ssh-keygen -t rsa -C &ldquo;[the mail address you use for GitHub]&rdquo;
 
 <ul>
 <li>No need for passphrase, just &ldquo;yes&rdquo; at next</li>
 </ul></li>
-<li>Go to your user folder. Cmd+shift+. for Mac or &ldquo;View Hidden Files&rdquo; on Windows</li>
-<li>Copy that key.</li>
-<li>Go and add that to GitHub account settings (follow along)</li>
+<li>Go to your user folder. Cmd+shift+. for Mac or &ldquo;View Hidden Files&rdquo; on Windows.</li>
+<li>Go to the ssh folder.</li>
+<li>Open the .pub file in a text editor. Copy that key.</li>
+<li>Go and add that to GitHub account settings (follow along).</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Name and Email to Git</h2></hgroup><article  id="name-and-email-to-git">
@@ -188,27 +189,27 @@ slide:not(.current) .plotly.html-widget{
 </article></slide><slide class=""><hgroup><h2>Make a repository</h2></hgroup><article  id="make-a-repository">
 
 <ul>
-<li>On the command line, navigate to a folder</li>
-<li>Make a new folder in that directory (mkdir)</li>
-<li>Go to that directory</li>
-<li>Create a Hello World R file in that directory (cat &gt; hello.r; print(&ldquo;Hello World&rdquo;), Ctrl-d)</li>
+<li>On the command line, navigate to a folder.</li>
+<li>Make a new folder in that directory (mkdir).</li>
+<li>Go into that directory (cd).</li>
+<li>Create a Hello World R file in that directory (cat &gt; hello.r, print(&ldquo;Hello World&rdquo;), Ctrl-d)</li>
 <li>Initialize Git for that directory (git init)</li>
-<li>Add file we created (git add)</li>
 <li>Check the status (git status)</li>
-<li>Commit our change (git commit -m &ldquo;First Commit&rdquo;)</li>
+<li>Add file we created (git add)</li>
+<li>Commit the change (git commit -m &ldquo;First Commit&rdquo;)</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Push our repo to GitHub</h2></hgroup><article  id="push-our-repo-to-github">
 
 <ul>
-<li>Go to github.</li>
+<li>Go to GitHub in your browser.</li>
 <li>Log in to your account.</li>
 <li>Click the new repository button in the top-right.</li>
-<li>Click the &ldquo;New repository&rdquo; button.</li>
-<li>Set your remote connection
+<li>Create the repository</li>
+<li>Back in your terminal, set your remote connection
 
 <ul>
-<li>git remote add origin <a href='mailto:git@github.com' title=''>git@github.com</a>:username/new_repo</li>
+<li>git remote add origin <a href='mailto:git@github.com' title=''>git@github.com</a>:username/[the name of your repo]</li>
 </ul></li>
 <li>Rename your &ldquo;master&rdquo; branch&quot;
 
@@ -225,17 +226,17 @@ slide:not(.current) .plotly.html-widget{
 </article></slide><slide class=""><hgroup><h2>Collaborate Pt 1</h2></hgroup><article  id="collaborate-pt-1">
 
 <ul>
-<li><p>Go to Collin’s teaching_repo</p></li>
-<li><p>Fork it. Now you have a copy in your GitHub</p></li>
-<li><p>Open terminal/bash and navigate to folder in which you want the folder for the project</p></li>
-<li><p>Clone (download) a local copy:</p>
+<li>Go to Collin’s teaching_repo in GitHub (github.com/collinpaschall)</li>
+<li>Fork it. Now you have a copy in <em>your</em> GitHub</li>
+<li>Open terminal/bash and navigate to the folder in which you want the <em>local copy</em> for the project</li>
+<li>Clone (download) a local copy:
 
 <ul>
 <li>git clone <a href='mailto:git@github.com' title=''>git@github.com</a>:[your username]/[the repo name]</li>
 </ul></li>
-<li><p>Go into that local folder</p></li>
-<li><p>Add a connection to the <em>original</em> respository -git remote add collinpaschall <a href='https://github.com/collinpaschall/teaching_repo' title=''>https://github.com/collinpaschall/teaching_repo</a></p></li>
-<li><p>Check that the remote is set up</p>
+<li>Go into that local folder (cd)</li>
+<li>Add a connection to the <em>original</em> repository -git remote add collinpaschall <a href='https://github.com/collinpaschall/teaching_repo' title=''>https://github.com/collinpaschall/teaching_repo</a></li>
+<li>Check that the remote is set up
 
 <ul>
 <li>git remote -v</li>
@@ -245,18 +246,19 @@ slide:not(.current) .plotly.html-widget{
 </article></slide><slide class=""><hgroup><h2>Collaborate Pt 2</h2></hgroup><article  id="collaborate-pt-2">
 
 <ul>
-<li>Make some changes to this file using R Studio. Add your name!</li>
+<li>Make some changes to this file using R Studio. Add a line with print(&ldquo;[your name]&rdquo;). Save.</li>
 <li>git add the file</li>
 <li>git commit -m &ldquo;[your name] added&rdquo;</li>
 <li>git push</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Collaborating with Others</h2></hgroup><article  id="collaborating-with-others">
+</article></slide><slide class=""><hgroup><h2>Collaborate Pt 3</h2></hgroup><article  id="collaborate-pt-3">
 
 <ul>
 <li>Go to your own version of the forked repository.</li>
 <li>Click &ldquo;pull request&rdquo;.</li>
 <li>The owner of the original repo is notified.</li>
+<li>The owner will merge in your changes if s/he likes them.</li>
 </ul></article></slide>
 
 
