@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+	<title>Collin Paschall’s RSS feed</title>
+	<link>http://collinpaschall.github.io/</link>
+	<description>Short Thoughts and News</description>
+
+<item>
+	<title>First Post</title>
+	<link>https://collinpaschall.github.io/blog#more_thoughts<link>
+	<guid>https://collinpaschall.github.io/blog#more_thoughts</guid>
+	<pubDate>Mon, 25 Apr 2022</pubDate>
+	<description>Trying to Make an RSS feed</description>
+</item>
+
+</channel>
+</rss>
