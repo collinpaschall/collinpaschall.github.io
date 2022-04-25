@@ -2,22 +2,22 @@
 <rss version="2.0">
 <channel>
 	<title>Collin Paschall’s RSS feed</title>
-	<link>http://collinpaschall.github.io/blog</link>
+	<link>http://collinpaschall.github.io/blog.html</link>
 	<description>Short Thoughts and News</description>
-
-<item>
-	<title>Posting with RSS</title>
-	<link>hhttps://collinpaschall.github.io/blog.html#a-test-post-1</link>
-	<guid>https://collinpaschall.github.io/blog.html#a-test-post-1</guid>
-	<pubDate>Mon, 25 Apr 2022 12:11:00 EST</pubDate>
-	<description>This is a test post</description>
-</item>
 
 <item>
 	<title>Posting with RSS again</title>
 	<link>hhttps://collinpaschall.github.io/blog.html#another-test-post-1</link>
 	<guid>https://collinpaschall.github.io/blog.html#another-test-post-1</guid>
 	<pubDate>Mon, 25 Apr 2022 12:36:00 EST</pubDate>
+	<description>This is a test post</description>
+</item>
+
+<item>
+	<title>Posting with RSS</title>
+	<link>hhttps://collinpaschall.github.io/blog.html#a-test-post-1</link>
+	<guid>https://collinpaschall.github.io/blog.html#a-test-post-1</guid>
+	<pubDate>Mon, 25 Apr 2022 12:11:00 EST</pubDate>
 	<description>This is a test post</description>
 </item>
 
