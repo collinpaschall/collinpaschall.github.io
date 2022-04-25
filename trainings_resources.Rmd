@@ -13,6 +13,12 @@ library("vembedr")
 
 Periodically I will post useful resources and trainings that I either locate or make myself.
 
+### Working with Git and GitHub
+
+April 2022
+
+[Presentation Slides](https://collinpaschall.github.io/git_gh.html).
+
 ### Making a Website Using Github
 
 February 2022
@@ -20,7 +26,6 @@ February 2022
 [Presentation Slides](https://collinpaschall.github.io/github_pres.html).
 
 Workshop Recording:
-
 
 ```{r,echo=FALSE}
 embed_youtube("MoiAuoGb-b4")
