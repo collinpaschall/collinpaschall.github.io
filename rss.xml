@@ -6,11 +6,11 @@
 	<description>Short Thoughts and News</description>
 
 <item>
-	<title>First Post</title>
-	<link>https://collinpaschall.github.io/blog.html#post-post-1</link>
-	<guid>https://collinpaschall.github.io/blog.html#post-post-1</guid>
+	<title>Posting with RSS</title>
+	<link>hhttps://collinpaschall.github.io/blog.html#a-test-post-1</link>
+	<guid>https://collinpaschall.github.io/blog.html#a-test-post-1</guid>
 	<pubDate>Mon, 25 Apr 2022</pubDate>
-	<description>Trying to Make an RSS feed</description>
+	<description>This is a test post</description>
 </item>
 
 </channel>
