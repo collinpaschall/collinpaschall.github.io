@@ -17,7 +17,7 @@ Periodically I will post useful resources and trainings that I either locate or 
 
 April 2022
 
-[Presentation Slides](https://collinpaschall.github.io/git_gh.html).
+[Git/GH Presentation Slides](https://collinpaschall.github.io/git_gh.html).
 
 ### Making a Website Using Github
 
