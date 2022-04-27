@@ -23,6 +23,10 @@ This is a trial post.
 
 This is a second trial post.
 
+## What I've been reading
+
+<!-- https://www.washingtonpost.com/education/2022/04/26/adjunct-professor-american-georgetown-gwu/ -->
+
 ```{r notes, echo=FALSE,include=FALSE}
 #### anchors added with this:
 

@@ -1,0 +1,114 @@
+---
+title: "Working with Git and GitHub"
+author: "Collin Paschall"
+output: 
+  ioslides_presentation:
+    widescreen: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Working with Git and GitHub
+
+- What? Git/GH are tools for file versioning.
+- Why? Git/GH are very popular with tech folks.
+
+## Recognition
+
+- This presentation draws very heavily on Karl Broman's Git tutorial - [kbroman.org/github_tutorial](kbroman.org/github_tutorial).
+
+## How Does Git work?
+
+ - Loosely, Git adds some "hidden files" in a directory/folder on your computer.
+ - These files help track changes to files in the folder.
+ - This folder is called a "repository."
+ 
+## Git vs. GitHub
+ 
+ - Git is command line software. GitHub is an online web service for maintaining copies of repos. GitHub Desktop is a GUI wrapper for using Git on your computer. 
+- If you know Git, GitHub Desktop is a piece of cake. Nerd out, learn the command line.
+
+## Git Commands
+
+- There are lots of ways to use Git commands. We are only doing the basics.
+- git init: create a repository using an existing folder. 
+- git add: tell git you are done working with a file and the file is ready to "commit" to your repository. This is staging the file.
+    - counterintuitively, this is also how you tell git that you want to remove a file you delete.
+- git commit: make the modifications to the repository and keep track of them.
+- git push: put your new files on GitHub
+
+## What we are going to do
+- Set up Git on your computer
+- Create a repository and connect it to GitHub
+- Fork and suggest changes to a repository
+
+## Prereq - Linux/Bash command line
+- Navigate using cd, cd .., and ls
+
+## Get started
+- We can move faster if you set up SSH (secure shell) login for Git. 
+- Open your Terminal or Git Bash
+- ssh-keygen -t rsa -C "[the mail address you use for GitHub]"
+    - No need for passphrase, just "yes" at next
+- Go to your user folder. Cmd+shift+. for Mac or "View Hidden Files" on Windows.
+- Go to the ssh folder.
+- Open the .pub file in a text editor. Copy that key.
+- Go and add that to GitHub account settings (follow along).
+
+## Name and Email to Git
+- git config `--`global user.name "[Your name]"
+- git config `--`global user.email "[your email]"
+
+## Make a repository
+- On the command line, navigate to a folder.
+- Make a new folder in that directory (mkdir).
+- Go into that directory (cd).
+- Create a Hello World R file in that directory (cat > hello.r, print("Hello World"), Ctrl-d)
+- Initialize Git for that directory (git init)
+- Check the status (git status)
+- Add file we created (git add)
+- Commit the change (git commit -m "First Commit")
+
+## Push our repo to GitHub
+
+- Go to GitHub in your browser.
+- Log in to your account.
+- Click the new repository button in the top-right. 
+- Create the repository
+- Back in your terminal, set your remote connection 
+    - git remote add origin git@github.com:username/[the name of your repo]
+- Rename your "master" branch" 
+    - git branch -M main 
+- Push your commit to the main branch
+    - git push -u origin main
+
+## Collaborate Pt 1
+
+- Go to Collin's teaching_repo in GitHub (github.com/collinpaschall)
+- Fork it. Now you have a copy in *your* GitHub
+- Open terminal/bash and navigate to the folder in which you want the *local copy* for the project
+- Clone (download) a local copy:
+    - git clone git@github.com:[your username]/[the repo name]
+- Go into that local folder (cd)
+- Add a connection to the *original* repository
+    -git remote add collinpaschall https://github.com/collinpaschall/teaching_repo
+- Check that the remote is set up
+    - git remote -v
+        
+## Collaborate Pt 2
+
+- Make some changes to this file using R Studio. Add a line with print("[your name]"). Save.
+- git add the file
+- git commit -m "[your name] added"
+- git push
+
+## Collaborate Pt 3
+- Go to your own version of the forked repository.
+- Click "pull request".
+- The owner of the original repo is notified.
+- The owner will merge in your changes if s/he likes them.
+
+
+

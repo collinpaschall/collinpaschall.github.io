@@ -29,7 +29,7 @@ Then, I set up an IFTTT account. For $10 a month, you can create unlimited apple
 
 April 2022
 
-[Git/GH Presentation Slides](https://collinpaschall.github.io/git_gh.html).
+[Git/GH Presentation Slides](./git_gh.html).
 
 ### Making a Website Using Github
 
