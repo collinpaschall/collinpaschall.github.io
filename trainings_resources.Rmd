@@ -1,7 +1,9 @@
 ---
 title: "Trainings and Resources"
 output: 
-  html_document
+  html_document:
+      includes:
+        after_body: anchor.html
 
 ---
 
@@ -29,6 +31,8 @@ Then, I set up an IFTTT account. For $10 a month, you can create unlimited apple
 
 April 2022
 
+### Getting Started With Git and GitHub
+
 [Git/GH Presentation Slides](./git_gh.html).
 
 [Source Material from Karl Broman.](https://kbroman.org/github_tutorial/)
@@ -41,9 +45,9 @@ Workshop Recording:
 embed_youtube("6nASVoRzBzg")
 ```
 
-### Making a Website Using Github
-
 February 2022
+
+### Making a Website Using Github
 
 [Presentation Slides](./github_pres.html).
 
