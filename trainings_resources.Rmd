@@ -31,13 +31,25 @@ April 2022
 
 [Git/GH Presentation Slides](./git_gh.html).
 
+[Source Material from Karl Broman.](https://kbroman.org/github_tutorial/)
+
+Workshop Recording:
+
+[Link](https://www.youtube.com/watch?v=6nASVoRzBzg)
+
+```{r,echo=FALSE}
+embed_youtube("6nASVoRzBzg")
+```
+
 ### Making a Website Using Github
 
 February 2022
 
-[Presentation Slides](https://collinpaschall.github.io/github_pres.html).
+[Presentation Slides](./github_pres.html).
 
 Workshop Recording:
+
+[Link](https://www.youtube.com/watch?v=MoiAuoGb-b4)
 
 ```{r,echo=FALSE}
 embed_youtube("MoiAuoGb-b4")
