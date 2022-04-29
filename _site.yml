@@ -16,8 +16,6 @@ navbar:
       href: nationscape.html
     - text: "Trainings and Resources"
       href: trainings_resources.html
-    #- text: "Thoughts"
-    #  href: blog.html
   right:
     - icon: fa-linkedin
       href: https://www.linkedin.com/in/collin-paschall-16137510
