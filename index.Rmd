@@ -24,11 +24,11 @@ My work is at the intersection of government and data analytics. I teach courses
 
 I am based out of Columbus, Ohio and travel to DC for work and department events on a regular basis.
 
-You can find a copy of my CV [here](http://collinpaschall.github.io/paschall_cv11.19.21.pdf).
+You can find a copy of my CV [here](http://collinpaschall.github.io/paschall_cv_12.22.pdf).
 
 # Teaching
 
-Although I am primarily focused on teaching in the [M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/), I have also offered courses in the [M.A. in Government](https://advanced.jhu.edu/academics/graduate/ma-government/) and the [M.A. in Public Management](https://advanced.jhu.edu/academics/graduate/ma-public-management) . I typically teach 4 courses a year, in the spring, summer, and fall semesters. I have personally developed all the courses I currently teach. Syllabi that I have developed are available below. In spring 2023, I am schedule to teach Programming and Data Management, a survey course in statistical programming methods. That course will include crash courses in R, report generation in Quarto, Python, and database management.
+Although I am primarily focused on teaching in the [M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/) program, I have also offered courses in the [M.A. in Government](https://advanced.jhu.edu/academics/graduate/ma-government/) and the [M.A. in Public Management](https://advanced.jhu.edu/academics/graduate/ma-public-management) . I typically teach 4 courses a year, in the spring, summer, and fall semesters. I have personally developed all the courses I currently teach. Syllabi that I have developed are available below. In spring 2023, I am scheduled to teach Programming and Data Management, a survey course in statistical programming methods. That course will include crash courses in R, report generation in Quarto, Python, and database management.
 
 ### Data Visualization
 
