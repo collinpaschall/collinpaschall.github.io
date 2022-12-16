@@ -1,3 +1,5 @@
+<!--# PLEASE NOTE: this file should be renamed with a .qmd extension to be properly rendered as a Quarto document in RStudio. A rendered version can be found at: https://collinpaschall.github.io/omas_example.html-->
+
 ---
 title: "OMAS Survey R Demo"
 format: html
@@ -5,6 +7,8 @@ editor: visual
 ---
 
 This document includes demonstration code for importing, wrangling, and summarizing data from  the 2021 OMAS survey.
+
+The document is published at: [https://collinpaschall.github.io/omas_example.html](https://collinpaschall.github.io/omas_example.html).
 
 ### Load Data
 
@@ -32,7 +36,6 @@ dat <- read_rds(data_url) %>% filter(S9<996)
 # get FIPS (pulled from Kieran Healy's page, https://github.com/kjhealy/fips-codes)
 
 fips <- read_csv("https://raw.githubusercontent.com/collinpaschall/collinpaschall.github.io/main/fips.csv")
-
 
 # data preparation
 
