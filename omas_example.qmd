@@ -1,0 +1,55 @@
+This report provides
+
+
+```{r}
+
+# Load Data
+
+library(tidyverse)
+
+data_url <- ("https://collinpaschall.github.io/omas2021_puf_10122022.rds")
+
+dat <- read_rds(data_url)
+
+# Inspect if you want
+# glimpse(dat)
+
+```
+
+```{r}
+
+# Merge in some county names corresponding with FIPS codes
+
+# Drop observations from survey where FIPS is missing or otherwise not good (assume county must be known for this analysis)
+
+dat <- dat %>% filter(S9<996)
+
+# get FIPS from Kieran Healy's page
+
+fips <- read_csv("https://raw.githubusercontent.com/kjhealy/fips-codes/master/state_and_county_fips_master.csv")
+
+# Substract 39000 from the FIPS values for Ohio
+# rename fips$name to fips$county_name, 
+# drop "state"
+# join to survey data
+# select only franklin and delaware counties
+
+dat2 <- fips %>% 
+  filter(state=="OH") %>% 
+  mutate(fips=fips-39000) %>% 
+  rename(county_name = name) %>% 
+  select(c("fips","county_name")) %>%
+  left_join(dat,.,by=c("S9"="fips")) %>% 
+  filter(county_name %in% c("Franklin County","Delaware County","Warren County","Cuyahoga County"))
+
+
+```
+
+```{r}
+
+# Variables of interest
+
+
+
+
+```
