@@ -122,74 +122,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>This document includes some demonstration code for importing, wrangling, and summarizing data from the 2021 OMAS survey.</p>
+<p>This document includes demonstration code for importing, wrangling, and summarizing data from the 2021 OMAS survey.</p>
 <section id="load-data" class="level3">
 <h3 class="anchored" data-anchor-id="load-data">Load Data</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#data_url &lt;- ("https://collinpaschall.github.io/omas2021_puf_10122022.rds")</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data_url <span class="ot">&lt;-</span> (<span class="st">"https://collinpaschall.github.io/omas2021_puf_10122022.rds"</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#dat &lt;- read_rds(data_url)</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop observations from survey where FIPS is missing or otherwise not good</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># (assume county must be known for this demonstration)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop observations from survey where FIPS is missing or otherwise not good</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (assume county must be known for this demonstration)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(data_url) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(S9<span class="sc">&lt;</span><span class="dv">996</span>)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"omas2021_puf_10122022.rds"</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(S9<span class="sc">&lt;</span><span class="dv">996</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect if you want</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># glimpse(dat)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect if you want</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># glimpse(dat)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge in some county names corresponding with FIPS codes</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get FIPS from Kieran Healy's page</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get FIPS (pulled from Kieran Healy's page, https://github.com/kjhealy/fips-codes)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#fips &lt;- read_csv("https://raw.githubusercontent.com/kjhealy/fips-codes/master/state_and_county_fips_master.csv")</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>fips <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/collinpaschall/collinpaschall.github.io/main/fips.csv"</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#write_csv(fips,"fips.csv")</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>fips <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"fips.csv"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># data preparation</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># data preparation</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> fips <span class="sc">%&gt;%</span> </span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state<span class="sc">==</span><span class="st">"OH"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fips=</span>fips<span class="dv">-39000</span>) <span class="sc">%&gt;%</span> <span class="co"># Substract 39000 from the FIPS values for Ohio</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">County Name</span><span class="st">`</span> <span class="ot">=</span> name) <span class="sc">%&gt;%</span> <span class="co"># rename fips$name to fips$county_name</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"fips"</span>,<span class="st">`</span><span class="at">County Name</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> <span class="co"># drop "state"</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(dat,.,<span class="at">by=</span><span class="fu">c</span>(<span class="st">"S9"</span><span class="ot">=</span><span class="st">"fips"</span>)) <span class="sc">%&gt;%</span>  <span class="co"># join to survey data</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">County Name</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Franklin County"</span>,<span class="st">"Warren County"</span>,<span class="st">"Cuyahoga County"</span>,<span class="st">"Hamilton County"</span>,<span class="st">"Montgomery County"</span>,<span class="st">"Summit County"</span>)) <span class="sc">%&gt;%</span> <span class="co"># select only large countries</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">`</span><span class="at">County Name</span><span class="st">`</span>,<span class="st">"A1"</span>,<span class="st">"S17_1"</span>,<span class="st">"H84_A2"</span>,<span class="st">"D30"</span>)) <span class="sc">%&gt;%</span> <span class="co"># select a handful of variables of interest %&gt;% </span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">insurance_01 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        A1<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        A1<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>),</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Insured Yes/No</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        A1<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">"No"</span>,</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        A1<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="st">"Yes"</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">health_status =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">5</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">4</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">3</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>),</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">white_01 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>       S17_1<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>       S17_1<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">income=</span>H84_A2) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>()  <span class="co"># drop NAs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> fips <span class="sc">%&gt;%</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state<span class="sc">==</span><span class="st">"OH"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fips=</span>fips<span class="dv">-39000</span>) <span class="sc">%&gt;%</span> <span class="co"># Subtract 39000 from the FIPS values for Ohio</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">County Name</span><span class="st">`</span> <span class="ot">=</span> name) <span class="sc">%&gt;%</span> <span class="co"># rename fips$name to fips$county_name</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"fips"</span>,<span class="st">`</span><span class="at">County Name</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> <span class="co"># drop "state"</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(dat,.,<span class="at">by=</span><span class="fu">c</span>(<span class="st">"S9"</span><span class="ot">=</span><span class="st">"fips"</span>)) <span class="sc">%&gt;%</span>  <span class="co"># join to survey data</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">County Name</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Franklin County"</span>,<span class="st">"Warren County"</span>,<span class="st">"Cuyahoga County"</span>,<span class="st">"Hamilton County"</span>,<span class="st">"Montgomery County"</span>,<span class="st">"Summit County"</span>)) <span class="sc">%&gt;%</span> <span class="co"># select only large countries</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">`</span><span class="at">County Name</span><span class="st">`</span>,<span class="st">"A1"</span>,<span class="st">"S17_1"</span>,<span class="st">"H84_A2"</span>,<span class="st">"D30"</span>)) <span class="sc">%&gt;%</span> <span class="co"># select a handful of variables of interest %&gt;% </span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Insured 0/1</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        A1<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        A1<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>),</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Insured Yes/No</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        A1<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">"No"</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        A1<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="st">"Yes"</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Health Status</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">5</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">4</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">3</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        D30<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>),</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">White 0/1</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>       S17_1<span class="sc">==</span><span class="dv">2</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>       S17_1<span class="sc">==</span><span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="st">`</span><span class="at">Income</span><span class="st">`</span><span class="ot">=</span>H84_A2) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>()  <span class="co"># drop NAs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="summary-values-for-select-variables" class="level3">
@@ -197,10 +193,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(dat2 <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(<span class="st">`</span><span class="at">County Name</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="st">"Average Income"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">mean</span>(income),<span class="dv">0</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Health Status"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">mean</span>(health_status),<span class="dv">2</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"% Insured"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">sum</span>(insurance_01)<span class="sc">/</span><span class="fu">n</span>(),<span class="dv">2</span>),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"% White"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">sum</span>(white_01)<span class="sc">/</span><span class="fu">n</span>(),<span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="st">"Average Income"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">mean</span>(<span class="st">`</span><span class="at">Income</span><span class="st">`</span>),<span class="dv">0</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Health Status"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">mean</span>(<span class="st">`</span><span class="at">Health Status</span><span class="st">`</span>),<span class="dv">2</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"% Insured"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">sum</span>(<span class="st">`</span><span class="at">Insured 0/1</span><span class="st">`</span>)<span class="sc">/</span><span class="fu">n</span>(),<span class="dv">2</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"% White"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">sum</span>(<span class="st">`</span><span class="at">White 0/1</span><span class="st">`</span>)<span class="sc">/</span><span class="fu">n</span>(),<span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <thead>
@@ -260,12 +256,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="a-simple-visualization-of-health-status-by-insured-status-and-county" class="level3">
-<h3 class="anchored" data-anchor-id="a-simple-visualization-of-health-status-by-insured-status-and-county">A simple visualization of health status by insured status and county</h3>
+<section id="visualization-of-health-status-by-insured-status-and-county" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-of-health-status-by-insured-status-and-county">Visualization of health status by insured status and county</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>summary_dat <span class="ot">&lt;-</span> dat2 <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(<span class="st">`</span><span class="at">County Name</span><span class="st">`</span>,<span class="st">`</span><span class="at">Insured Yes/No</span><span class="st">`</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="st">"Health Status"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">mean</span>(health_status),<span class="dv">2</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="st">"Health Status"</span><span class="ot">=</span><span class="fu">round</span>(<span class="fu">mean</span>(<span class="st">`</span><span class="at">Health Status</span><span class="st">`</span>),<span class="dv">2</span>))</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>summary_dat <span class="sc">%&gt;%</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">Insured Yes/No</span><span class="st">`</span>,<span class="at">y=</span><span class="st">`</span><span class="at">Health Status</span><span class="st">`</span>))<span class="sc">+</span></span>
@@ -276,11 +272,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="a-simple-regression-model-for-health-status-as-function-of-other-variables" class="level3">
-<h3 class="anchored" data-anchor-id="a-simple-regression-model-for-health-status-as-function-of-other-variables">A simple regression model for health status as function of other variables</h3>
+<section id="a-simple-regression-model-for-health-status-as-a-function-of-other-variables" class="level3">
+<h3 class="anchored" data-anchor-id="a-simple-regression-model-for-health-status-as-a-function-of-other-variables">A simple regression model for health status as a function of other variables</h3>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_status<span class="sc">~</span>income<span class="sc">+</span>insurance_01<span class="sc">+</span>white_01,dat2)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="st">`</span><span class="at">Health Status</span><span class="st">`</span><span class="sc">~</span><span class="st">`</span><span class="at">Income</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">Insured 0/1</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">White 0/1</span><span class="st">`</span>,dat2)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(mod,<span class="at">type=</span><span class="st">"html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
@@ -306,7 +302,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td style="text-align:left">
 </td>
 <td>
-health_status
+<code>Health Status</code>
 </td>
 </tr>
 <tr>
@@ -315,7 +311,7 @@ health_status
 </tr>
 <tr>
 <td style="text-align:left">
-income
+Income
 </td>
 <td>
 0.00000<sup>***</sup>
@@ -336,7 +332,7 @@ income
 </tr>
 <tr>
 <td style="text-align:left">
-insurance_01
+<code>Insured 0/1</code>
 </td>
 <td>
 0.001
@@ -357,7 +353,7 @@ insurance_01
 </tr>
 <tr>
 <td style="text-align:left">
-white_01
+<code>White 0/1</code>
 </td>
 <td>
 0.257<sup>***</sup>
@@ -461,7 +457,9 @@ F Statistic
 <p>This figure displays predicted values for health status as a function of income, holding other variables at their means (which is not necessarily meaningful for categorical independent variables, but this is only for technical demonstration purposes.)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jtools)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">effect_plot</span>(mod,<span class="at">pred=</span>income,<span class="at">interval=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">effect_plot</span>(mod,<span class="at">pred=</span><span class="st">`</span><span class="at">Income</span><span class="st">`</span>,<span class="at">interval=</span>T)<span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Income"</span>)<span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Health Status"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="omas_example_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>

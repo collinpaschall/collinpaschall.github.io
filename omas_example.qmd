@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-This document includes some demonstration code for importing, wrangling, and summarizing data from  the 2021 OMAS survey.
+This document includes demonstration code for importing, wrangling, and summarizing data from  the 2021 OMAS survey.
 
 ### Load Data
 
@@ -13,14 +13,12 @@ This document includes some demonstration code for importing, wrangling, and sum
 library(tidyverse)
 library(knitr)
 
-#data_url <- ("https://collinpaschall.github.io/omas2021_puf_10122022.rds")
-
-#dat <- read_rds(data_url)
+data_url <- ("https://collinpaschall.github.io/omas2021_puf_10122022.rds")
 
 # Drop observations from survey where FIPS is missing or otherwise not good
 # (assume county must be known for this demonstration)
 
-dat <- read_rds("omas2021_puf_10122022.rds") %>% filter(S9<996)
+dat <- read_rds(data_url) %>% filter(S9<996)
 
 # Inspect if you want
 # glimpse(dat)
@@ -31,12 +29,9 @@ dat <- read_rds("omas2021_puf_10122022.rds") %>% filter(S9<996)
 
 # Merge in some county names corresponding with FIPS codes
 
-# get FIPS from Kieran Healy's page
+# get FIPS (pulled from Kieran Healy's page, https://github.com/kjhealy/fips-codes)
 
-#fips <- read_csv("https://raw.githubusercontent.com/kjhealy/fips-codes/master/state_and_county_fips_master.csv")
-
-#write_csv(fips,"fips.csv")
-fips <- read_csv("fips.csv")
+fips <- read_csv("https://raw.githubusercontent.com/collinpaschall/collinpaschall.github.io/main/fips.csv")
 
 
 # data preparation
@@ -45,7 +40,7 @@ dat2 <- fips %>%
   
   filter(state=="OH") %>% 
   
-  mutate(fips=fips-39000) %>% # Substract 39000 from the FIPS values for Ohio
+  mutate(fips=fips-39000) %>% # Subtract 39000 from the FIPS values for Ohio
   
   rename(`County Name` = name) %>% # rename fips$name to fips$county_name
   
@@ -58,23 +53,24 @@ dat2 <- fips %>%
   select(c(`County Name`,"A1","S17_1","H84_A2","D30")) %>% # select a handful of variables of interest %>% 
   
   mutate(
-    insurance_01 = case_when(
+    `Insured 0/1` = case_when(
         A1==2 ~ 0,
         A1==1 ~ 1),
     `Insured Yes/No` = case_when(
         A1==2 ~ "No",
         A1==1 ~ "Yes"
     ),
-    health_status = case_when(
+    `Health Status` = case_when(
         D30==5 ~ 1,
         D30==4 ~ 2,
         D30==3 ~ 3,
         D30==2 ~ 4,
         D30==1 ~ 5),
-    white_01 = case_when(
+    `White 0/1` = case_when(
        S17_1==2 ~ 0,
        S17_1==1 ~ 1)) %>% 
-    rename(income=H84_A2) %>% 
+  
+    rename(`Income`=H84_A2) %>% 
 
     drop_na()  # drop NAs
 
@@ -86,20 +82,20 @@ dat2 <- fips %>%
 
 kable(dat2 %>%
     group_by(`County Name`) %>% 
-    summarise("Average Income"=round(mean(income),0),
-              "Health Status"=round(mean(health_status),2),
-              "% Insured"=round(sum(insurance_01)/n(),2),
-              "% White"=round(sum(white_01)/n(),2)))
+    summarise("Average Income"=round(mean(`Income`),0),
+              "Health Status"=round(mean(`Health Status`),2),
+              "% Insured"=round(sum(`Insured 0/1`)/n(),2),
+              "% White"=round(sum(`White 0/1`)/n(),2)))
 
 ```
 
-### A simple visualization of health status by insured status and county
+### Visualization of health status by insured status and county
 
 ```{r,message=FALSE}
 
 summary_dat <- dat2 %>%
     group_by(`County Name`,`Insured Yes/No`) %>%
-    summarise("Health Status"=round(mean(health_status),2))
+    summarise("Health Status"=round(mean(`Health Status`),2))
 
 summary_dat %>%
   ggplot(aes(x=`Insured Yes/No`,y=`Health Status`))+
@@ -109,13 +105,13 @@ summary_dat %>%
 
 ```
 
-### A simple regression model for health status as function of other variables
+### A simple regression model for health status as a function of other variables
 
 ```{r,warning=FALSE,message=FALSE,results='asis'}
 
 library(stargazer)
 
-mod <- lm(health_status~income+insurance_01+white_01,dat2)
+mod <- lm(`Health Status`~`Income` + `Insured 0/1` + `White 0/1`,dat2)
 
 stargazer(mod,type="html")
 
@@ -127,7 +123,9 @@ This figure displays predicted values for health status as a function of income,
 
 ```{r}
 library(jtools)
-effect_plot(mod,pred=income,interval=T)
+effect_plot(mod,pred=`Income`,interval=T)+
+  xlab("Income")+
+  ylab("Health Status")
 
 ```
 
