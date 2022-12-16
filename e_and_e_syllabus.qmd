@@ -1,0 +1,89 @@
+---
+title: "Expertise and Evidence in Policymaking"
+subtitle: "Brief Course Syllabus"
+format: html
+---
+
+## Course Overview
+
+This document contains a brief course overview. Full course policies are avail on the Canvas syllabus.
+
+Expertise is often thought of as a politically neutral force, one that can be used to shape rational policymaking processes. In the United States and around the world, much is made of the progress in science and technology and how it can be applied to public life. We seem to be able to glimpse a future where carefully crafted social, industrial, and economic programs can correct many of the pressing issues that confront us.
+
+However, the existence of knowledge is not the same thing as the ability to apply it through political processes. For expertise to be useful, it must be analyzed as a political force, not merely a technical one. Over the course of this semester, we will analyze the role of experts in policymaking processes. We will consider whether the tools of public policy analysis enable experts can help us craft policymaking process and substantive policies. Further, we will appraise the capacity of our political system to make effective use of technical and behavioral knowledge. Our goal is to become more expert about experts. I look forward to working together with you in this process!
+
+By the end of this course, you will be able to:
+
+-   Describe the role of expertise in formulating and analyzing public policy process
+-   Assess the capacity of citizens to engage with experts in political discourse
+-   Identify the opportunities and challenges associated with integrating evidence-based policymaking into legislative, judicial, and bureaucratic decision-making
+
+## Course Assessment
+
+Your grade in this class is out of 150 points. Fifty points will be awarded for responses to weekly discussion board prompts. Fifty points will be awarded for a mid-term report that assess the potential for evidence-based policymaking to be applied to an area of policy interest. Finally, 50 points will be awarded for a final written exam, in the style of a comprehensive exam. More details are provided in the Canvas shell.
+
+This course follows the standard JHU grading scale.
+
+## Brief Course Schedule
+
+Detailed readings lists are available on Canvas.
+
+Module 1: Introduction to Public Policy
+
+-   Selections from Kraft and Furlong, *Policy Analysis: An introduction.*
+
+Module 2: Theories of Public Policy
+
+-   Chapters 1, 4, 8, 9 of Kingdon, John W., 1984, *Agendas, Alternatives and Public Policies*, New York: Harper Collins, 1995. (required text)
+
+-   Sabatier, Paul A. 1988. "An Advocacy Coalition Model of Policy Change and the Role of Policy-Oriented Learning Therein." Policy Sciences 21 (Fall): 129-168. (eReserves)
+
+-   Baumgartner, Frank R., Bryan D. Jones, and Peter B. Mortensen. 2018. "Punctuated Equilibrium Theory: Explaining Stability and Change in Public Policymaking" In Weible, Christopher M. and Paul Sabatier, eds., 2018. Theories of the Policy Process. Routledge. (ebook at JHU library)
+
+Module 3: Applications of Policy Theory
+
+-   Selected readings applying policy theory to contemporary policy issues
+
+Module 4: The Evidence-Based Policy Movement
+
+-   Commission on Evidence-Based Policymaking. 2017. \"The Promise of Evidence-Based Policymaking.\"
+
+-   Foundations of Evidence-Based Policymaking Act of 2018.
+
+Module 5: EBPM Research Week
+
+Module 6: Introduction to Program Evaluation
+
+-   Selections from Linfield and Posavac, *Program Evaluation: Methods and Case Studies*.
+
+Module 7: Program Evaluation Research Design Part 1 - Obsverational Studies
+
+-   Selections from Linfield and Posavac, *Program Evaluation: Methods and Case Studies*.
+
+Module 8: Program Evaluation Research Design Part 2 - Experimental Methods
+
+-   Selections from Linfield and Posavac, *Program Evaluation: Methods and Case Studies*.
+
+Module 9: Citizen Competence
+
+-   Achen and Bartels, *Democracy for Realists*
+
+Module 10: Congress and Interest Groups
+
+-   Selections from *Congress Overhwhelmed*
+
+Module 11: Bureaucracies and Expertise
+
+-   Selections from Ginsberg and Paschall 2021
+
+Module 12: Think Tanks
+
+-   Selections from McGann, *The Fifth Estate*
+
+Module 13: The Judiciary and Expertise
+
+-   Law review articles on judicial competence to assess statistical and social scientific evidence.
+
+Module 14: Legislative Testimony on EBPM
+
+Module 15: Final Exam

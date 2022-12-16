@@ -29,11 +29,7 @@ You can find a copy of my CV **[here](http://collinpaschall.github.io/paschall_c
 
 # Teaching
 
-I split my teaching duties between two programs in the Center for Advanced Governmental Studies at Johns Hopkins University: the **[M.A. in Government](https://advanced.jhu.edu/academics/graduate/ma-government/)** and the **[M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/)**. I typically teach 4 courses a year, in the spring, summer, and fall semesters. I have personally developed all the courses I currently teach.
-
-### Research and Thesis I
-
-Research and Thesis I is the first course in the M.A. in Government thesis sequence. Our M.A. in Government program culminates in a portfolio thesis of three chapters (papers) that are substantively and thematically related. In the course, I provide an overview of social scientific inquiry. You can review a recent syllabus **[here](http://collinpaschall.github.io/paschall_rt1.pdf)**.
+Although I am primarily focused on teaching in the **[M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/)**, I have also offered courses in the **[M.A. in Government ](https://advanced.jhu.edu/academics/graduate/ma-government/)** and the **[M.A. in Public Management](https://advanced.jhu.edu/academics/graduate/ma-public-management)** . I typically teach 4 courses a year, in the spring, summer, and fall semesters. I have personally developed all the courses I currently teach. Syllabi that I have developed are available below. In spring 2023, I am schedule to teach Programming and Data Management, a survey course in statistical programming methods. That course will include crash courses in R, report generation in Quarto, Python, and database management.
 
 ### Data Visualization
 
@@ -44,6 +40,16 @@ Parts of this course have been adapted into a **[Coursera specialization](https:
 ### Unleashing Open Data with Python
 
 Unleashing Open Data with Python is an introduction to data analysis in Python. It is designed for intermediate R users who want to be able to analyze rectangular data sets in Python. The course also includes an introduction to accessing data through APIs and a very brief overview of web scraping. For the final project, students write a short research note and post replication code on GitHub. You can review a recent syllabus **[here](https://collinpaschall.github.io/paschall_python.pdf)**.
+
+### Expertise and Evidence in Policymaking
+
+Expertise is often thought of as a politically neutral force, one that can be used to shape rational policymaking processes. In the United States and around the world, much is made of the progress in science and technology and how it can be applied to public life. We seem to be able to glimpse a future where carefully crafted social, industrial, and economic programs can correct many of the pressing issues that confront us.
+
+However, the existence of knowledge is not the same thing as the ability to apply it through political processes. For expertise to be useful, it must be analyzed as a political force, not merely a technical one. Over the course of this semester, we will analyze the role of experts in policymaking processes. We will consider whether the tools of public policy analysis enable experts can help us craft policymaking process and substantive policies. Further, we will appraise the capacity of our political system to make effective use of technical and behavioral knowledge. Our goal is to become more expert about experts. You can review the course schedule **[here]((https://collinpaschall.github.io/e_and_e_syllabus.html)**
+
+### Research and Thesis I
+
+Research and Thesis I is the first course in the M.A. in Government thesis sequence. Our M.A. in Government program culminates in a portfolio thesis of three chapters (papers) that are substantively and thematically related. In the course, I provide an overview of social scientific inquiry. You can review a recent syllabus **[here](http://collinpaschall.github.io/paschall_rt1.pdf)**.
 
 # Research
 
