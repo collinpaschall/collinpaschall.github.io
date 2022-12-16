@@ -6,7 +6,7 @@ format: html
 
 ## Course Overview
 
-This document contains a brief course overview. Full course policies are avail on the Canvas syllabus.
+This document contains a brief course overview. Full course policies are available on the Canvas syllabus.
 
 Expertise is often thought of as a politically neutral force, one that can be used to shape rational policymaking processes. In the United States and around the world, much is made of the progress in science and technology and how it can be applied to public life. We seem to be able to glimpse a future where carefully crafted social, industrial, and economic programs can correct many of the pressing issues that confront us.
 
@@ -46,7 +46,7 @@ Module 3: Applications of Policy Theory
 
 Module 4: The Evidence-Based Policy Movement
 
--   Commission on Evidence-Based Policymaking. 2017. \"The Promise of Evidence-Based Policymaking.\"
+-   Commission on Evidence-Based Policymaking. 2017. "The Promise of Evidence-Based Policymaking."
 
 -   Foundations of Evidence-Based Policymaking Act of 2018.
 
@@ -74,7 +74,7 @@ Module 10: Congress and Interest Groups
 
 Module 11: Bureaucracies and Expertise
 
--   Selections from Ginsberg and Paschall 2021
+-   Selections from Ginsberg and Paschall 2022
 
 Module 12: Think Tanks
 

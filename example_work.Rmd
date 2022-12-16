@@ -17,11 +17,3 @@ tibble(mtcars)
 ggplot(mtcars,aes(x=mpg,y=cyl))+geom_point()
 ```
 
-```{python}
-import pandas as pd
-
-thing=["a","b","c","d","d"]
-
-thing_frame=pd.DataFrame(thing)
-thing_frame.value_counts()
-```

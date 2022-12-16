@@ -13,8 +13,8 @@
 
 <title>Teaching</title>
 
-<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -59,6 +59,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -140,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +181,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -235,7 +236,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -286,20 +287,48 @@ $(document).ready(function () {
 
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>I split my teaching duties between two programs in the Center for Advanced Governmental Studies at Johns Hopkins University: the <strong><a href="https://advanced.jhu.edu/academics/graduate/ma-government/">M.A. in Government</a></strong> and the <strong><a href="https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/">M.S. in Data Analytics and Policy</a></strong>. I typically teach 5 courses a year, in the spring, summer, and fall semesters. I have personally developed all the courses I currently teach.</p>
+<p>I split my teaching duties between two programs in the Center for
+Advanced Governmental Studies at Johns Hopkins University: the
+<strong><a
+href="https://advanced.jhu.edu/academics/graduate/ma-government/">M.A. in
+Government</a></strong> and the <strong><a
+href="https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/">M.S.
+in Data Analytics and Policy</a></strong>. I typically teach 5 courses a
+year, in the spring, summer, and fall semesters. I have personally
+developed all the courses I currently teach.</p>
 </div>
 <div id="research-and-thesis-i" class="section level2">
 <h2>Research and Thesis I</h2>
-<p>Research and Thesis I is the first course in the M.A. in Government thesis sequence. Our M.A. in Government program culminates in a portfolio thesis of three chapters (papers) that are substantively and thematically related. In the course, I provide an overview of social scientific inquiry. You can review a recent syllabus <strong><a href="http://collinpaschall.github.io/paschall_rt1.pdf">here</a></strong>.</p>
+<p>Research and Thesis I is the first course in the M.A. in Government
+thesis sequence. Our M.A. in Government program culminates in a
+portfolio thesis of three chapters (papers) that are substantively and
+thematically related. In the course, I provide an overview of social
+scientific inquiry. You can review a recent syllabus <strong><a
+href="http://collinpaschall.github.io/paschall_rt1.pdf">here</a></strong>.</p>
 </div>
 <div id="data-visualization" class="section level2">
 <h2>Data Visualization</h2>
-<p>Data Visualization is a core course in the M.S. in Data Analytics and Policy program. The course covers creating static and interactive visualization in Tableau and R. The R portion of the course is based on ggplot and the tidyverse. It also include an introduction to dashboard development and R Shiny applications. You can review a recent syllabus <strong><a href="https://collinpaschall.github.io/paschall_data_viz.pdf">here</a></strong></p>
-<p>Parts of this course have been adapted into a <strong><a href="https://www.coursera.org/specializations/jhu-data-visualization-dashboarding-with-r">Coursera specialization</a></strong> that I continue to manage. The Coursera offering has more than 10,000 enrollments.</p>
+<p>Data Visualization is a core course in the M.S. in Data Analytics and
+Policy program. The course covers creating static and interactive
+visualization in Tableau and R. The R portion of the course is based on
+ggplot and the tidyverse. It also include an introduction to dashboard
+development and R Shiny applications. You can review a recent syllabus
+<strong><a
+href="https://collinpaschall.github.io/paschall_data_viz.pdf">here</a></strong></p>
+<p>Parts of this course have been adapted into a <strong><a
+href="https://www.coursera.org/specializations/jhu-data-visualization-dashboarding-with-r">Coursera
+specialization</a></strong> that I continue to manage. The Coursera
+offering has more than 10,000 enrollments.</p>
 </div>
 <div id="unleashing-open-data-with-python" class="section level2">
 <h2>Unleashing Open Data with Python</h2>
-<p>Unleashing Open Data with Python is an introduction to data analysis in Python. It is designed for intermediate R users who want to be able to analyze rectangular data sets in Python. The course also includes an introduction to accessing data through APIs and a very brief overview of web scraping. For the final project, students write a short research note and post replication code on GitHub. You can review a recent syllabus **<a href="">here</a></p>
+<p>Unleashing Open Data with Python is an introduction to data analysis
+in Python. It is designed for intermediate R users who want to be able
+to analyze rectangular data sets in Python. The course also includes an
+introduction to accessing data through APIs and a very brief overview of
+web scraping. For the final project, students write a short research
+note and post replication code on GitHub. You can review a recent
+syllabus **<a href="">here</a></p>
 </div>
 
 

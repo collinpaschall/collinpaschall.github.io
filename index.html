@@ -13,8 +13,8 @@
 
 <title>Collin Paschall</title>
 
-<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -62,6 +62,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -86,6 +87,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -143,11 +147,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -176,8 +184,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -185,16 +193,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -311,7 +312,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -360,31 +361,124 @@ div.tocify {
 </div>
 
 
-<p>I currently serve as the <strong><a href="https://advanced.jhu.edu/directory/collin-paschall/">Interim Program Director for the Data Analytics and Policy Program</a></strong> in the <strong><a href="https://advanced.jhu.edu/about/centers/center-for-advanced-governmental-studies/">Center for Advanced Governmental Studies</a></strong> at Johns Hopkins University. I’ve been at JHU since 2019. Prior to my current position, I earned my PhD in the Department of Political Science at the University of Illinois at Urbana-Champaign (2018). After graduate school, I served as an American Political Science Association Congressional Fellow. I also hold a J.D. from The George Washington University Law School (2011), and I am native Nebraskan and graduate of the University of Nebraska-Lincoln (2008).</p>
-<p>My work is at the intersection of government and data analytics. I teach courses in social science research design, statistical programming and analysis, and American politics. My research covers a range of topics in American political behavior and institutions. I’ve worked in the areas of Congressional legislative behavior, the consequences of Congressional scandals, mass political opinion, and the role of expertise in American politics and policy making.</p>
-<p>I am based out of Columbus, Ohio and travel to DC for work and department events on a regular basis.</p>
-<p>You can find a copy of my CV <strong><a href="http://collinpaschall.github.io/paschall_cv11.19.21.pdf">here</a></strong>.</p>
+<p>I currently serve as the <a
+href="https://advanced.jhu.edu/directory/collin-paschall/">Interim
+Program Director for the Data Analytics and Policy Program</a> in the <a
+href="https://advanced.jhu.edu/about/centers/center-for-advanced-governmental-studies/">Center
+for Advanced Governmental Studies</a> at Johns Hopkins University. I’ve
+been at JHU since 2019. Prior to my current position, I earned my PhD in
+the Department of Political Science at the University of Illinois at
+Urbana-Champaign (2018). After graduate school, I served as an American
+Political Science Association Congressional Fellow. I also hold a J.D.
+from The George Washington University Law School (2011), and I am native
+Nebraskan and graduate of the University of Nebraska-Lincoln (2008).</p>
+<p>My work is at the intersection of government and data analytics. I
+teach courses in social science research design, statistical programming
+and analysis, and American politics. My research covers a range of
+topics in American political behavior and institutions. I’ve worked in
+the areas of Congressional legislative behavior, the consequences of
+Congressional scandals, mass political opinion, and the role of
+expertise in American politics and policy making.</p>
+<p>I am based out of Columbus, Ohio and travel to DC for work and
+department events on a regular basis.</p>
+<p>You can find a copy of my CV <a
+href="http://collinpaschall.github.io/paschall_cv11.19.21.pdf">here</a>.</p>
 <div id="teaching" class="section level1">
 <h1>Teaching</h1>
-<p>I split my teaching duties between two programs in the Center for Advanced Governmental Studies at Johns Hopkins University: the <strong><a href="https://advanced.jhu.edu/academics/graduate/ma-government/">M.A. in Government</a></strong> and the <strong><a href="https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/">M.S. in Data Analytics and Policy</a></strong>. I typically teach 4 courses a year, in the spring, summer, and fall semesters. I have personally developed all the courses I currently teach.</p>
-<div id="research-and-thesis-i" class="section level3">
-<h3>Research and Thesis I</h3>
-<p>Research and Thesis I is the first course in the M.A. in Government thesis sequence. Our M.A. in Government program culminates in a portfolio thesis of three chapters (papers) that are substantively and thematically related. In the course, I provide an overview of social scientific inquiry. You can review a recent syllabus <strong><a href="http://collinpaschall.github.io/paschall_rt1.pdf">here</a></strong>.</p>
-</div>
+<p>Although I am primarily focused on teaching in the <a
+href="https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/">M.S.
+in Data Analytics and Policy</a>, I have also offered courses in the <a
+href="https://advanced.jhu.edu/academics/graduate/ma-government/">M.A. in
+Government</a> and the <a
+href="https://advanced.jhu.edu/academics/graduate/ma-public-management">M.A. in
+Public Management</a> . I typically teach 4 courses a year, in the
+spring, summer, and fall semesters. I have personally developed all the
+courses I currently teach. Syllabi that I have developed are available
+below. In spring 2023, I am schedule to teach Programming and Data
+Management, a survey course in statistical programming methods. That
+course will include crash courses in R, report generation in Quarto,
+Python, and database management.</p>
 <div id="data-visualization" class="section level3">
 <h3>Data Visualization</h3>
-<p>Data Visualization is a core course in the M.S. in Data Analytics and Policy program. The course covers creating static and interactive visualizations in Tableau and R. The R portion of the course is based on ggplot and the tidyverse. It also includes an introduction to dashboard development and R Shiny applications. You can review a recent syllabus <strong><a href="https://collinpaschall.github.io/paschall_data_viz.pdf">here</a></strong>.</p>
-<p>Parts of this course have been adapted into a <strong><a href="https://www.coursera.org/specializations/jhu-data-visualization-dashboarding-with-r">Coursera specialization</a></strong> that I continue to manage. The Coursera offering has more than 10,000 enrollments.</p>
+<p>Data Visualization is a core course in the M.S. in Data Analytics and
+Policy program. The course covers creating static and interactive
+visualizations in Tableau and R. The R portion of the course is based on
+ggplot and the tidyverse. It also includes an introduction to dashboard
+development and R Shiny applications. You can review a recent syllabus
+<a
+href="https://collinpaschall.github.io/paschall_data_viz.pdf">here</a>.</p>
+<p>Parts of this course have been adapted into a <a
+href="https://www.coursera.org/specializations/jhu-data-visualization-dashboarding-with-r">Coursera
+specialization</a> that I continue to manage. The Coursera offering has
+more than 10,000 enrollments.</p>
 </div>
 <div id="unleashing-open-data-with-python" class="section level3">
 <h3>Unleashing Open Data with Python</h3>
-<p>Unleashing Open Data with Python is an introduction to data analysis in Python. It is designed for intermediate R users who want to be able to analyze rectangular data sets in Python. The course also includes an introduction to accessing data through APIs and a very brief overview of web scraping. For the final project, students write a short research note and post replication code on GitHub. You can review a recent syllabus <strong><a href="https://collinpaschall.github.io/paschall_python.pdf">here</a></strong>.</p>
+<p>Unleashing Open Data with Python is an introduction to data analysis
+in Python. It is designed for intermediate R users who want to be able
+to analyze rectangular data sets in Python. The course also includes an
+introduction to accessing data through APIs and a very brief overview of
+web scraping. For the final project, students write a short research
+note and post replication code on GitHub. You can review a recent
+syllabus <a
+href="https://collinpaschall.github.io/paschall_python.pdf">here</a>.</p>
+</div>
+<div id="expertise-and-evidence-in-policymaking" class="section level3">
+<h3>Expertise and Evidence in Policymaking</h3>
+<p>Expertise is often thought of as a politically neutral force, one
+that can be used to shape rational policymaking processes. In the United
+States and around the world, much is made of the progress in science and
+technology and how it can be applied to public life. We seem to be able
+to glimpse a future where carefully crafted social, industrial, and
+economic programs can correct many of the pressing issues that confront
+us.</p>
+<p>However, the existence of knowledge is not the same thing as the
+ability to apply it through political processes. For expertise to be
+useful, it must be analyzed as a political force, not merely a technical
+one. Over the course of this semester, we will analyze the role of
+experts in policymaking processes. We will consider whether the tools of
+public policy analysis enable experts can help us craft policymaking
+process and substantive policies. Further, we will appraise the capacity
+of our political system to make effective use of technical and
+behavioral knowledge. Our goal is to become more expert about experts.
+You can review the course schedule <a
+href="https://collinpaschall.github.io/e_and_e_syllabus.html">here</a>.</p>
+</div>
+<div id="research-and-thesis-i" class="section level3">
+<h3>Research and Thesis I</h3>
+<p>Research and Thesis I is the first course in the M.A. in Government
+thesis sequence. Our M.A. in Government program culminates in a
+portfolio thesis of three chapters (papers) that are substantively and
+thematically related. In the course, I provide an overview of social
+scientific inquiry. You can review a recent syllabus <a
+href="http://collinpaschall.github.io/paschall_rt1.pdf">here</a>.</p>
 </div>
 </div>
 <div id="research" class="section level1">
 <h1>Research</h1>
-<p>I have a diverse research agenda covering American political institutions and behavior. My dissertation research in graduate school focused on the legislative strategies of members of Congress, and I have also written on Congressional scandal. With Benjamin Kantack of Lycoming College, I am engaged in on-going projects related to mass attitudes in contentious policy domains like gun control, climate change, and structural racism.</p>
-<p>I also have an interest in the politics of expertise and how expertise influences policy making. In my forthcoming book (with Ben Ginsberg), <strong>Speaking Truth to Power: Expertise, Politics and Governance</strong>, we examine how experts, or truth-tellers, succeed - or fail - to inform decision-makers and resolve conflicts in American public life. Ultimately, we show that while experts are indeed important in crafting solutions to problems, “truth” can also be a servant to the powerful and is not a substitute for broader democratic processes. The book is complete and will be available in fall 2022 from Edward Elgar Publishing.</p>
+<p>I have a diverse research agenda covering American political
+institutions and behavior. My dissertation research focused on the
+legislative strategies of members of Congress, and I have also written
+on Congressional scandal <a
+href="https://journals.sagepub.com/doi/full/10.1177/1065912919826224?casa_token=HsEn5WMixbkAAAAA%3AcGqU6SiI_0vZdmV8_pQ3MusNNTUaFy-wWPReV0Ybh7Ai7Tap2lgGJQFpsHqYD5dXXT0KcF4NIgwVvA">(1)</a>
+<a
+href="https://www.emerald.com/insight/content/doi/10.1108/978-1-80117-119-920221015/full/html">(2)</a>.
+With Benjamin Kantack of Lycoming College, I am engaged in on-going
+projects related to mass attitudes in contentious policy domains like <a
+href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ssqu.12754?casa_token=FQGUM-fubzUAAAAA:y4TRc4Z6VvlsSX7aKNh13sFjoz9R4FaNRB3DuRAl45r0T0mGiPIu4ExsfesAgcJdiaCjWCVq6utWbNw">gun
+control</a>, <a
+href="https://journals.sagepub.com/doi/full/10.1177/09636625221133520?casa_token=yc--4qil76wAAAAA%3AIgI6ZpyqXTk-e2z4PQtdkrzNCn7x6tY8NzuSy7uxIYcTjCP-aXM4RAU4bBhB8dqwDlMYg2aJ5tS9Mw">climate
+change, and structural racism</a>.</p>
+<p>I also have an interest in the politics of expertise and how
+expertise influences policy making. In my forthcoming book (with Ben
+Ginsberg), <a
+href="https://www.e-elgar.com/shop/usd/speaking-truth-to-power-9781803927626.html">Speaking
+Truth to Power: Expertise, Politics and Governance</a>, we examine how
+experts, or truth-tellers, succeed - or fail - to inform decision-makers
+and resolve conflicts in American public life. Ultimately, we show that
+while experts are indeed important in crafting solutions to problems,
+“truth” can also be a servant to the powerful and is not a substitute
+for broader democratic processes.</p>
 </div>
 
 
