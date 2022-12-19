@@ -11,7 +11,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "CV"
-      href: paschall_cv_12.22.pdf
+      href: cv.html
     - text: "Example Work"
       href: nationscape.html
     - text: "Trainings and Resources"
