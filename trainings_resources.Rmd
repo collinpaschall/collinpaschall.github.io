@@ -4,7 +4,6 @@ output:
   html_document:
       includes:
         after_body: anchor.html
-
 ---
 
 ```{r setup, include=FALSE}
@@ -15,19 +14,17 @@ library("vembedr")
 
 Periodically I will post useful resources and trainings that I either locate or make myself.
 
-### Working with Git and GitHub
+March 2023
 
-<!-- May 2022 -->
+### Research talk with Benjamin Kantack
 
-<!-- Cleaning your social media diet. -->
+Dr. Kantack and I discuss our recent research featured in [Public Understanding of Science](https://journals.sagepub.com/doi/abs/10.1177/09636625221133520).
 
-<!-- After Musk bought Twitter, it prompted me to reconsider my use of Twitter. I don't wish to support Musk, but I find Twitter a very useful source of information on emerging scholarship and some news sources. So, I have developed hacky workaround. -->
+[Link](https://www.youtube.com/watch?v=uaOCjEqQEkU&t)
 
-<!-- First, I learned how to create an RSS feed from this website. It is easy. 
-
-Then, I set up an IFTTT account. For $10 a month, you can create unlimited applets that will send tweets to a Google Drive document. Now, I get the benefits of viewing my Twitter feed without any noise, and only the accounts I really want to see. No likes, ads, or log-ins. Musk will probably kick me off eventually. -->
-
-<!-- https://www.makeuseof.com/tag/how-to-create-an-rss-feed-for-your-site-from-scratch/ -->
+```{r,echo=FALSE}
+embed_youtube("uaOCjEqQEkU")
+```
 
 April 2022
 
