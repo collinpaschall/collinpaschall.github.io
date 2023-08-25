@@ -12,8 +12,6 @@ navbar:
       href: index.html
     - text: "CV"
       href: cv.html
-    - text: "Example Work"
-      href: nationscape.html
     - text: "Trainings and Resources"
       href: trainings_resources.html
   right:
