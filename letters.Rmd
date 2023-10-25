@@ -1,0 +1,25 @@
+---
+title: "Letters of Recommendation"
+output: html_document
+---
+
+*This letter of recommendation guidance adapted from [Dr. Jaime Settle's](https://jsettle.people.wm.edu/rec-letters.html) page.*
+
+Writing an excellent letter of recommendation is a time consuming process, and I do not believe it serves the interests of students to provide letters that will not be helpful in application processes. However, helping students secure opportunities outside of the classroom is one of the most rewarding aspects of my job. If you think that you would like for me to write you a letter of recommendation, you should follow the following steps.
+
+1.  Read through the materials provided on this page, and make sure that you can get me all necessary information at least **10 business days** before the deadline of the first letter that you need.
+2.  Send me an email with your request. Include with your request:
+    -   A brief description of the opportunity
+    -   A brief statement of your interest (a few sentences)
+    -   Your resume
+    -   An informal transcript
+    -   An example of your best work (a class project, a paper, or similar. At least five pages or equivalent)
+
+3.  I will let you know whether I can provide a Category 1, Category 2, Category 3 letter, or that I will not write a letter.
+
+-   Category 1: a letter that includes specific examples of your outstanding skills and characteristics derived from my personal experience working with you, as well as a review of any supporting materials you provide me.
+-   Category 2: a letter that includes my general observations of your strengths and weaknesses based on my experience working with you and based on a review of your academic record and the materials you give me. I may disclose in this letter that I have limited ability to speak to your ability outside the context of our class setting, whether online or in person.
+-   Category 3: a letter that reports your interest in the opportunity for which you are applying and describes your program of study and record of performance. I will disclose that I have limited experience working with you individually.
+-   Will not provide a letter: In some cases, my experience working with you is too far in the past and/or too minimal for me to provide a letter of recommendation.
+
+4.  If you still want me to write a letter, please provide me ALL of the materials that you are going to submit as part of your application, a link to the information about the position, and directions for how to submit the letter (or you can proceed with getting the recommendation link emailed to me through whatever recommendation system the position uses).
