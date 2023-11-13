@@ -30,7 +30,7 @@ April 2022
 
 ### Getting Started With Git and GitHub
 
-[Git/GH Presentation Slides](./git_gh.html).
+[Git/GH Presentation Slides](./git_gh_js.html).
 
 [Source Material from Karl Broman.](https://kbroman.org/github_tutorial/)
 
