@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library("vembedr")
 ```
 
-Periodically I will post useful resources and trainings that I either locate or make myself.
+Some odds and ends.
 
 March 2023
 

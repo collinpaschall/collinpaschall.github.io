@@ -24,7 +24,7 @@ My work is at the intersection of government and data analytics. I teach courses
 
 I am based out of Columbus, Ohio and travel to DC for work and department events on a regular basis.
 
-You can find a copy of my CV [here](http://collinpaschall.github.io/paschall_cv_8_23.pdf).
+You can find a copy of my CV [here](http://collinpaschall.github.io/paschall_cv_8_23.pdf). Here is a shorter version in [resume style](http://collinpaschall.github.io/paschall_resume_short.pdf).
 
 # Teaching
 
