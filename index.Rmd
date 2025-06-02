@@ -6,29 +6,23 @@ output:
       toc_float: true
 ---
 
-```{r,echo=FALSE}
-#htmltools::tags$iframe(title="cv",src="paschall_cv_11.19.21.html",width=1000,height=200)
-#rmarkdown::render_site()
-      #
-library("vembedr")
-```
 
 ```{r,echo=FALSE,out.width=300,out.extra='style="float:right; padding:10px"'}
 #knitr::include_graphics("collin.jpg")
 #random thing for commit
 ```
 
-I currently serve as the [Program Director for the Data Analytics and Policy Program](https://advanced.jhu.edu/directory/collin-paschall/) in the [Center for Data Analtyics, Policy, and Government](https://advanced.jhu.edu/about/centers/center-for-advanced-governmental-studies/) at Johns Hopkins University. I've been at JHU since 2019. Prior to my current position, I earned my PhD in the Department of Political Science at the University of Illinois at Urbana-Champaign (2018). After graduate school, I served as an American Political Science Association Congressional Fellow. I also hold a J.D. from The George Washington University Law School (2011). I am originally from Omaha, Nebraska and I earned by B.A. from the University of Nebraska-Lincoln (2008).
+I currently serve as the [Program Director for the Data Analytics and Policy Program](https://advanced.jhu.edu/directory/collin-paschall/) in the [Center for Data Analtyics, Policy, and Government](https://advanced.jhu.edu/about/centers/center-for-advanced-governmental-studies/) at Johns Hopkins University. Concurrently, I am the Interim Assistant Director for the Center as a whole. I've been with JHU since 2019. I am based out of central Ohio and travel back to DC and Baltimore frequently for program events and administrative gatherings. 
 
-My work is at the intersection of government and data analytics. I teach courses in social science research design, statistical programming and analysis, and American politics. My research covers a range of topics in American political behavior and institutions. I've worked in the areas of Congressional legislative behavior, the consequences of Congressional scandals, mass political opinion, and the role of expertise in American politics and policymaking.
+Prior to my current position, I earned my PhD in the Department of Political Science at the University of Illinois at Urbana-Champaign (2018). After graduate school, I served as an American Political Science Association Congressional Fellow. I also hold a J.D. from The George Washington University Law School (2011). I am originally from Omaha, Nebraska and I earned by B.A. from the University of Nebraska-Lincoln (2008).
 
-I am based out of Columbus, Ohio and travel to DC for work and department events on a regular basis.
+My work is at the intersection of government and data analytics. I teach courses in social science research design, statistical programming and analysis, and American politics. My scholarly interests are in American political behavior and institutions. I've worked in the areas of Congressional legislative behavior, the consequences of Congressional scandals, mass political opinion, and the role of expertise in American politics and policymaking.
 
-You can find a copy of my CV [here](http://collinpaschall.github.io/paschall_cv_8_23.pdf). Here is a shorter version in [resume style](http://collinpaschall.github.io/paschall_resume_short.pdf).
+You can find a copy of my CV [here](http://collinpaschall.github.io/paschall_cv_5_25.pdf). Here is a shorter version in [resume style](http://collinpaschall.github.io/paschall_resume_short.pdf).
 
 # Teaching
 
-Although I am primarily focused on teaching in the [M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/) program, I have also offered courses in the [M.A. in Government](https://advanced.jhu.edu/academics/graduate/ma-government/) and the [M.A. in Public Management](https://advanced.jhu.edu/academics/graduate/ma-public-management) . I typically teach 4 courses a year, in the spring, summer, and fall semesters. Syllabi that I have developed are available below.
+Although I am primarily focused on teaching in the [M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/) program, I have also offered courses in the [M.A. in Government](https://advanced.jhu.edu/academics/graduate/ma-government/) and the [M.A. in Public Management](https://advanced.jhu.edu/academics/graduate/ma-public-management) . I typically teach 3 courses a year, in the spring, summer, and fall semesters. Example syllabi that I have developed are available below.
 
 ### Data Visualization
 
@@ -54,4 +48,4 @@ Research and Thesis I is the first course in the M.A. in Government thesis seque
 
 I have a diverse research agenda covering American political institutions and behavior. My dissertation research focused on the legislative strategies of members of Congress, and I have also written on Congressional scandal [(1)](https://journals.sagepub.com/doi/full/10.1177/1065912919826224?casa_token=HsEn5WMixbkAAAAA%3AcGqU6SiI_0vZdmV8_pQ3MusNNTUaFy-wWPReV0Ybh7Ai7Tap2lgGJQFpsHqYD5dXXT0KcF4NIgwVvA) [(2)](https://www.emerald.com/insight/content/doi/10.1108/978-1-80117-119-920221015/full/html). With Benjamin Kantack of Lycoming College, I am engaged in on-going projects related to mass attitudes in contentious policy domains like [gun control](https://onlinelibrary.wiley.com/doi/abs/10.1111/ssqu.12754?casa_token=FQGUM-fubzUAAAAA:y4TRc4Z6VvlsSX7aKNh13sFjoz9R4FaNRB3DuRAl45r0T0mGiPIu4ExsfesAgcJdiaCjWCVq6utWbNw), [climate change, and structural racism](https://journals.sagepub.com/doi/full/10.1177/09636625221133520?casa_token=yc--4qil76wAAAAA%3AIgI6ZpyqXTk-e2z4PQtdkrzNCn7x6tY8NzuSy7uxIYcTjCP-aXM4RAU4bBhB8dqwDlMYg2aJ5tS9Mw).
 
-I also have an interest in the politics of expertise and how expertise influences policy making. In my forthcoming book (with Ben Ginsberg), [Speaking Truth to Power: Expertise, Politics and Governance](https://www.e-elgar.com/shop/usd/speaking-truth-to-power-9781803927626.html), we examine how experts, or truth-tellers, succeed - or fail - to inform decision-makers and resolve conflicts in American public life. Ultimately, we show that while experts are indeed important in crafting solutions to problems, "truth" can also be a servant to the powerful and is not a substitute for broader democratic processes.
+I also have an interest in the politics of expertise and how expertise influences policy making. In my book (with Ben Ginsberg), [Speaking Truth to Power: Expertise, Politics and Governance](https://www.e-elgar.com/shop/usd/speaking-truth-to-power-9781803927626.html), we examine how experts, or truth-tellers, succeed - or fail - to inform decision-makers and resolve conflicts in American public life. Ultimately, we show that while experts are indeed important in crafting solutions to problems, "truth" can also be a servant to the powerful and is not a substitute for broader democratic processes.

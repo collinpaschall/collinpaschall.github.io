@@ -40,7 +40,7 @@
     };
   </script>
 
-  <script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
   <link href="site_libs/ioslides-13.5.1/fonts/fonts.css" rel="stylesheet" />
   <link href="site_libs/ioslides-13.5.1/theme/css/default.css" rel="stylesheet" />
   <link href="site_libs/ioslides-13.5.1/theme/css/phone.css" rel="stylesheet" />
@@ -294,6 +294,11 @@ slide:not(.current) .plotly.html-widget{
        window.jQuery(document).on('slideenter', function(e) {
          window.jQuery(e.target).trigger('shown');
       });
+    }
+    if (window.Shiny) {
+      // Initialize slides when this script appears on the page, since it
+      // indicates that the <slides> markup has been fully loaded.
+      window.loadDeck();
     }
   })();
 </script>
