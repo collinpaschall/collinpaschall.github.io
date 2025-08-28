@@ -13,7 +13,7 @@ output:
 ```
 
 
-You can find a copy of my CV [here](http://collinpaschall.github.io/paschall_cv_8_7_25.pdf), or you can view a sort resume that covers my recent work at JHU [here](http://collinpaschall.github.io/paschall_resume_short_8_27_25.pdf).
+You can find a copy of my CV [here](http://collinpaschall.github.io/Paschall_cv_8_27_25.pdf), or you can view a sort resume that covers my recent work at JHU [here](http://collinpaschall.github.io/Paschall_resume_short_8_27_25.pdf).
 
 I currently serve as the [Program Director for the Data Analytics and Policy Program](https://advanced.jhu.edu/directory/collin-paschall/) in the [Center for Data Analtyics, Policy, and Government](https://advanced.jhu.edu/about/centers/center-for-advanced-governmental-studies/) at Johns Hopkins University. I've been with JHU since 2019. I am based out of central Ohio and travel back to DC and Baltimore frequently for program events and administrative gatherings. 
 
