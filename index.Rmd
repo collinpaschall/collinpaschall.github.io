@@ -13,40 +13,49 @@ output:
 ```
 
 
-You can find a copy of my CV [here](http://collinpaschall.github.io/Paschall_cv_8_27_25.pdf), or you can view a sort resume that covers my recent work at JHU [here](http://collinpaschall.github.io/Paschall_resume_short_8_27_25.pdf).
+You can find a copy of my CV [here](http://collinpaschall.github.io/Paschall_cv_8_27_25.pdf), or you can view a short resume that covers my recent work at JHU [here](http://collinpaschall.github.io/Paschall_resume_short_8_27_25.pdf).
 
-I currently serve as the [Program Director for the Data Analytics and Policy Program](https://advanced.jhu.edu/directory/collin-paschall/) in the [Center for Data Analtyics, Policy, and Government](https://advanced.jhu.edu/about/centers/center-for-advanced-governmental-studies/) at Johns Hopkins University. I've been with JHU since 2019. I am based out of central Ohio and travel back to DC and Baltimore frequently for program events and administrative gatherings. 
+
+I am the [Program Director for the Data Analytics and Policy Program](https://advanced.jhu.edu/directory/collin-paschall/) in the [Center for Data Analtyics, Policy, and Government](https://advanced.jhu.edu/about/centers/center-for-advanced-governmental-studies/) at Johns Hopkins University. I've been with JHU since 2019. I am based out of central Ohio and travel back to DC and Baltimore frequently for program events and administrative gatherings. 
+
+My work is at the intersection of data analytics and government. I teach courses in statistical programming and analysis, data science methods, American politics, and research design. 
+
+My PhD training was in political science, but I have robust data science skills in R and Python, including econometric analysis, machine learning/predictive analytics, and data visualization.
 
 Prior to my current position, I earned my PhD in the Department of Political Science at the University of Illinois at Urbana-Champaign (2018). After graduate school, I served as an American Political Science Association Congressional Fellow. I also hold a J.D. from The George Washington University Law School (2011). I am originally from Omaha, Nebraska and I earned by B.A. from the University of Nebraska-Lincoln (2008).
 
-My work is at the intersection of government and data analytics. I teach courses in social science research design, statistical programming and analysis, and American politics. My scholarly interests are in American political behavior and institutions. I've worked in the areas of Congressional legislative behavior, the consequences of Congressional scandals, mass political opinion, and the role of expertise in American politics and policymaking.
+# Administration and Leadership
+
+I am the chief administrator, content expert, and curriculum architect for the Data Analytics and Policy program (DAP) at JHU. DAP is an interdisciplinary master's degree that combines training in computational statistics, data management, and emerging technologies as applied to the public sector.
+
+Along with teaching courses in data science methods and American politics, my responsibilities include overseeing the curriculum lifecycle, from conceptualization to quality assurance and continuous improvement. I hire and manage a team of full-time and part-time faculty, and I also collaborate with colleagues in the School of Arts and Sciences on program development, instructional design, faculty governance, event planning, admissions, and marketing.
+
+DAP is part of the Center for Data Analytics, Policy, and Government, a suite of six interrelated programs focusing on data science and public administration. DAP serves more than 150 students, and the Center as a whole serves approximately 700.
 
 # Teaching
 
-Although I am primarily focused on teaching in the [M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/) program, I have also offered courses in the [M.A. in Government](https://advanced.jhu.edu/academics/graduate/ma-government/) and the [M.A. in Public Management](https://advanced.jhu.edu/academics/graduate/ma-public-management). I typically teach 3 courses a year. Example syllabi that I have developed are available below.
+Although I am primarily focused on teaching in the [M.S. in Data Analytics and Policy](https://advanced.jhu.edu/academics/graduate/ms-data-analytics-policy/) program, I have also offered courses in the [M.A. in Government](https://advanced.jhu.edu/academics/graduate/ma-government/) and the [M.A. in Public Management](https://advanced.jhu.edu/academics/graduate/ma-public-management). 
 
-### Data Visualization
+Course I have designed and offered include:
 
-Data Visualization is a core course in the M.S. in Data Analytics and Policy program. The course covers creating static and interactive visualizations in Tableau and R. The R portion of the course is based on ggplot and the tidyverse. It also includes an introduction to dashboard development and R Shiny applications. You can review a recent syllabus [here](https://collinpaschall.github.io/paschall_data_viz.pdf).
+AS 470.768: Programming and Data and Management
 
-Parts of this course have been adapted into a [Coursera specialization](https://www.coursera.org/specializations/jhu-data-visualization-dashboarding-with-r) that I continue to manage. The Coursera offering has more than 10,000 enrollments.
+AS 470.673: Data Visualization 
 
-### Unleashing Open Data with Python
+AS.470.709: Quantitative Methods 
 
-Unleashing Open Data with Python is an introduction to data analysis in Python. It is designed for intermediate R users who want to be able to analyze rectangular data sets in Python. The course also includes an introduction to accessing data through APIs and a very brief overview of web scraping. For the final project, students write a short research note and post replication code on GitHub. You can review a recent syllabus [here](https://collinpaschall.github.io/paschall_python.pdf).
+AS.470.667: Machine Learning Methods and Applications
 
-### Expertise and Evidence in Policymaking
+AS.470.862: Capstone for Data Analytics and Policy 
 
-Expertise is often thought of as a politically neutral force, one that can be used to shape rational policymaking processes. In the United States and around the world, much is made of the progress in science and technology and how it can be applied to public life. We seem to be able to glimpse a future where carefully crafted social, industrial, and economic programs can correct many of the pressing issues that confront us.
+AS.470.662: Expertise and Evidence in Policymaking
 
-However, the existence of knowledge is not the same thing as the ability to apply it through political processes. For expertise to be useful, it must be analyzed as a political force, not merely a technical one. Over the course of this semester, we will analyze the role of experts in policymaking processes. We will consider whether the tools of public policy analysis enable experts can help us craft policymaking process and substantive policies. Further, we will appraise the capacity of our political system to make effective use of technical and behavioral knowledge. Our goal is to become more expert about experts. You can review the course schedule [here](https://collinpaschall.github.io/e_and_e_syllabus.html).
+AS 470.643: Text As Data
 
-### Research and Thesis I
-
-Research and Thesis I is the first course in the M.A. in Government thesis sequence. Our M.A. in Government program culminates in a portfolio thesis of three chapters (papers) that are substantively and thematically related. In the course, I provide an overview of social scientific inquiry. You can review a recent syllabus [here](http://collinpaschall.github.io/paschall_rt1.pdf).
+AS 470.850: Research and Thesis I 
 
 # Research
 
-I have a diverse research agenda covering American political institutions and behavior. My dissertation research focused on the legislative strategies of members of Congress, and I have also written on Congressional scandal [(1)](https://journals.sagepub.com/doi/full/10.1177/1065912919826224?casa_token=HsEn5WMixbkAAAAA%3AcGqU6SiI_0vZdmV8_pQ3MusNNTUaFy-wWPReV0Ybh7Ai7Tap2lgGJQFpsHqYD5dXXT0KcF4NIgwVvA) [(2)](https://www.emerald.com/insight/content/doi/10.1108/978-1-80117-119-920221015/full/html). With Benjamin Kantack of Lycoming College, I am engaged in on-going projects related to mass attitudes in contentious policy domains like [gun control](https://onlinelibrary.wiley.com/doi/abs/10.1111/ssqu.12754?casa_token=FQGUM-fubzUAAAAA:y4TRc4Z6VvlsSX7aKNh13sFjoz9R4FaNRB3DuRAl45r0T0mGiPIu4ExsfesAgcJdiaCjWCVq6utWbNw), [climate change, and structural racism](https://journals.sagepub.com/doi/full/10.1177/09636625221133520?casa_token=yc--4qil76wAAAAA%3AIgI6ZpyqXTk-e2z4PQtdkrzNCn7x6tY8NzuSy7uxIYcTjCP-aXM4RAU4bBhB8dqwDlMYg2aJ5tS9Mw).
+While my primary duties are administrative and curricular, I have research interests in American political institutions and behavior. My dissertation research focused on the legislative strategies of members of Congress, and I have also written on Congressional scandal [(1)](https://journals.sagepub.com/doi/full/10.1177/1065912919826224?casa_token=HsEn5WMixbkAAAAA%3AcGqU6SiI_0vZdmV8_pQ3MusNNTUaFy-wWPReV0Ybh7Ai7Tap2lgGJQFpsHqYD5dXXT0KcF4NIgwVvA) [(2)](https://www.emerald.com/insight/content/doi/10.1108/978-1-80117-119-920221015/full/html). With Benjamin Kantack of Lycoming College, I have written about mass attitudes in contentious policy domains like [gun control](https://onlinelibrary.wiley.com/doi/abs/10.1111/ssqu.12754?casa_token=FQGUM-fubzUAAAAA:y4TRc4Z6VvlsSX7aKNh13sFjoz9R4FaNRB3DuRAl45r0T0mGiPIu4ExsfesAgcJdiaCjWCVq6utWbNw), [climate change, and structural racism](https://journals.sagepub.com/doi/full/10.1177/09636625221133520?casa_token=yc--4qil76wAAAAA%3AIgI6ZpyqXTk-e2z4PQtdkrzNCn7x6tY8NzuSy7uxIYcTjCP-aXM4RAU4bBhB8dqwDlMYg2aJ5tS9Mw).
 
 I also have an interest in the politics of expertise and how expertise influences policy making. In my book (with Ben Ginsberg), [Speaking Truth to Power: Expertise, Politics and Governance](https://www.e-elgar.com/shop/usd/speaking-truth-to-power-9781803927626.html), we examine how experts, or truth-tellers, succeed - or fail - to inform decision-makers and resolve conflicts in American public life. Ultimately, we show that while experts are indeed important in crafting solutions to problems, "truth" can also be a servant to the powerful and is not a substitute for broader democratic processes.

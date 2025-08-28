@@ -10,7 +10,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "CV"
+    - text: "CV/Resume"
       href: cv.html
   right:
     - icon: fa-linkedin
